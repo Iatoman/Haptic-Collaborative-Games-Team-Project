@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/27-multiframes.dir/27-multiframes/27-multiframes.o  -o 27-multiframes 

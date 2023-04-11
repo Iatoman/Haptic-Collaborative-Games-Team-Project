@@ -1,0 +1,15 @@
+Had opportunity to try to make smaller device function, not sure if it's going to be possible
+
+Remaining tasks:
+		
+	Live demo:
+		Make device work
+		rehearse
+		
+		Alter slides according to feedback
+			Show more of what we accomplished in figures
+			GIFs of example game functioning
+
+
+meeting length: 225 mins
+Next meeting: 	10/5/2022 2PM Mixed Reality Lab

@@ -1,0 +1,43 @@
+Maybe we want to dynamically change the HRE mechanism throughout the task
+Make it hard to complete task somewhere in the maze
+
+
+
+rotate camera - goal in top left
+
+Remaining tasks:
+	end the game when ball reaches a goal
+
+		make the ball respond to movement from the device in the same way.
+			the further the ball is from the haptic cursor, the greater the force
+		
+		intertwine AI with user movement 
+		
+		Do not spawn objects or start timer until 'start' is pressed
+	
+		make a better logo for the README
+		
+		Add comprehensive comments to all code
+		
+		uncomment config and implement
+		
+		make a 5 minute video demonstrating what we've done 
+			start with OBS showing our architecture, testing and documentation, explaining all
+			cut to live demonstration of the device working with the program
+		discuss whether a smaller device may work to demo before deadline
+		
+		Refactor main example and game so that everything unique to this particular example is contained wihtin its example file
+		
+		Alter the makefile to work with rearranged directory
+			rearrange directory
+	report:
+		write report..
+		
+Assigned tasks:
+	Daniel + Lok: Report
+	Tianfeng + Jiahao: AI + device
+	Salaar: AI
+	Ibrahim: Config + victory screen 
+	
+Meeting length: 362 mins
+Next meeting: 9:30 29/04/2022 in CMS with Ayse

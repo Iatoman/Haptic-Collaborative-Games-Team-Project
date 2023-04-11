@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/28-voxel-basic.dir/28-voxel-basic/28-voxel-basic.o  -o 28-voxel-basic 

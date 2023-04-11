@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/23-tooth.dir/23-tooth/23-tooth.o  -o 23-tooth 

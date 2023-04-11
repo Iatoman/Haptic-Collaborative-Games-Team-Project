@@ -1,0 +1,57 @@
+Coding Conventions
+
+- use tabs over spaces
+- 80 chars maximum per line 
+- file names simple (best case one word) with first letter capitalised: Board.cpp
+	use only standard english characters to name files
+- Keep to established directory structure - example separate from src files
+- Avoid code duplication when possible
+
+/**
+ * A summary at the top of each file explaining its purpose
+ * 
+ *
+ */
+
+#includes go after the summary 
+
+//A simple function explanation for header files to explain how to use function
+int function()
+{
+	//frequent comments for non-trivial operations
+	some kind of operation;
+	
+	return something; 
+}
+
+/**
+ * @brief for source files this format is used. Can explain how function is implemented
+ *     
+ * 
+ * @param function arguments go here
+ * @param can use more than one function argument
+ * 
+ * @warning important warning information can go here 
+ * @return any detail about return value 
+ */
+int function1 (arg, space, before, next, arg) 
+{
+	doing something here;
+	doing something else;
+	
+	
+	return something; 
+}
+
+/**
+ * @brief 
+ *
+ * @param ...
+ * @param ... 
+ */ 
+void function2 (arguments, that, are, too, long, 
+			  to, fit, on, one, line)
+{
+	something something 
+	something else
+}

@@ -1,0 +1,9 @@
+Team number: 21
+Project title: Haptic Collaborative Games
+Academic supervisor: Ayse Kucukyilmaz
+Company name: University of Nottingham
+Industry supervisor(s): N/A
+
+Abstract:
+CHAI3D is a powerful C++ simulation framework for computer haptics, visualisation and interactive real-time simulation. Its modular capabilities allow for the creation of highly-performing native applications which support a range of haptic force-feedback devices. We built and documented an architecture that uses this framework to simplify the creation of board-based games. These games would involve the interaction of a human agent and an AI collaborating using a ‘haptic role exchange mechanism’ to achieve an objective. The work we have done could help in research of this collaboration paradigm and support development in applications like simulation-based medical training or computer-aided design. 
+

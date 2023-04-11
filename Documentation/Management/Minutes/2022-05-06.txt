@@ -1,0 +1,34 @@
+Changes have been made to the code to change the magnitude of the forces depending on the velocity of the ball. This needs testing with the device.
+
+
+Remaining tasks:
+	code:		
+		Coding conventions: comments
+
+		Display correct goal screen
+		
+		Implement haptic role exchange
+		
+		Add logic to respawn the ball if it falls off
+		
+		Refactor the example to follow new diagram
+		
+	Live demo:
+		Make device work
+		Build powerpoint
+		Build loose script
+		Show Ayse first draft 
+
+
+
+Assigned tasks	
+	Ibrahim: 	victory screen
+	Tianfeng: 	ball out of bounds 
+	Daniel: 	BOARD COMMENTS + POWERPOINT + SCRIPTS
+	Jiahao: 	script
+	Salaar: 	script + example game obstacles
+	lok: 		script
+
+
+meeting length: 26 mins
+Next meeting: 	Sunday 8th May 3pm 

@@ -1,0 +1,48 @@
+Add diagrams to git
+Add docs to git 
+Add latex to git once finished
+
+Remaining tasks:
+	code:
+		Add comprehensive comments to all code
+		Refactor code to follow coding conventions
+		
+		make a 5 minute video demonstrating what we've done 
+			start with OBS showing our architecture, testing and documentation, explaining all
+			cut to live demonstration of the device working with the program
+			
+		discuss whether a smaller device may work to demo before deadline
+	
+		Add project documentation
+		
+		change setUpWindow() to void return 
+		Rotate camera 90 degrees clockwise to place goal top left and align board with astar array
+	
+	Report:
+		Main report:
+			Problem analysis
+			Implementation
+				testing
+			Future roadmap
+			Summary
+			
+		Manual
+			Coding conventions
+			glossary
+			code structure
+			chai3d and bullet
+			game architecture
+			Building your own game 
+			virtuose
+			
+Assigned tasks:
+	Ibrahim: 	chai3d bullet
+	Tianfeng: 	Virtuose
+	Daniel: 	Building own game 
+	Jiahao: 	Problem analysis
+	Salaar: 	code structure board game architecture
+	lok: 		Problem analysis
+
+
+Meeting length: 26 mins
+Next meeting: 9:30 3/5/2022 In person

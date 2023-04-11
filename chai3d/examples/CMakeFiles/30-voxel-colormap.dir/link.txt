@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/30-voxel-colormap.dir/30-voxel-colormap/30-voxel-colormap.o  -o 30-voxel-colormap 

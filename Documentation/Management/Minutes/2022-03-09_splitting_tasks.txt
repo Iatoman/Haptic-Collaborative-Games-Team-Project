@@ -1,0 +1,4 @@
+split into pairs to work on issues
+Lok Salaar AI
+Jiahao Tianfeng collisions obstacles
+Daniel Ibrahim Splitting into classes

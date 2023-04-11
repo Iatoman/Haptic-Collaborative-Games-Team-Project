@@ -1,0 +1,9 @@
+Daniel completed the switch from ODE to bullet
+
+bullet turns out to have the same problem
+problem: can successfully add child to board and mesh moves accordingly
+dynamic physics object does not move, only board physics are operational
+the addChild() method will only add the mesh to the board.
+
+Solutions are being looked into.
+

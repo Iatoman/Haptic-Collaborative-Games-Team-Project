@@ -1,0 +1,12 @@
+Discussed syntax errors with all code
+
+people having trouble building the program using the makefile
+missing "libchai3d-BULLET.a"
+cause & solution:
+	gitignore is excluding .a and .o files, have to re-make chai3d and BULLET module
+	this must be factored in to the proper makefile
+
+Began planning out report
+Work now goes into
+	fixing syntax errors in existing code
+	beginning the report

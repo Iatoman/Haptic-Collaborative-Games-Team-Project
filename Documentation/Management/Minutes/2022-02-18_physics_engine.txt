@@ -1,0 +1,13 @@
+Most of this meeting consisted of researching about the best physics engine to integrate
+
+Cleaned up the gitlab page and introduced new issues, labels and milestones
+
+
+
+
+
+
+
+
+
+Next meeting Monday 21st 2pm in person

@@ -1,0 +1,39 @@
+It is vital that we get the AI and the role exchange working properly
+
+Salaar Lok Ibrahim talking
+Jiahao talking about AI
+Daniel operate the PPT AND device to play the game
+Tianfeng answering questions regarding the devices and force feedback
+
+Remaining tasks:
+	code:		
+		change setUpWindow() to void return 
+		
+		Rotate camera 90 degrees clockwise to place goal top left and align board with astar array
+	
+		Coding conventions: comments
+		
+		Have the game end upon reaching a goal
+		
+		Implement haptic role exchange
+		
+	Live demo:
+		Make device work
+		Build powerpoint
+		Build loose script
+		Show Ayse first draft 
+
+
+
+Assigned tasks:
+	Ibrahim: 	VICTORY SCREEN
+	Tianfeng: 	ROLE EXCHANGE  	
+	Daniel: 	POWERPOINT + SCRIPTS
+	Jiahao: 	AI SCRIPT AND CODE
+	Salaar: 	CODE HYGIENE + HOW
+	lok: 		SCRIPT + SMALLER DEVICE 
+
+
+meeting length: 60 mins
+Next meeting: 	possibly 	12pm Friday IP
+				else 		3pm Friday online

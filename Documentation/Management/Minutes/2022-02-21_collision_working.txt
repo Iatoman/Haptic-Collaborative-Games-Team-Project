@@ -1,0 +1,3 @@
+Met in the cobot space to demonstrate working collisions
+
+discovered problems running ODE examples with the device. 

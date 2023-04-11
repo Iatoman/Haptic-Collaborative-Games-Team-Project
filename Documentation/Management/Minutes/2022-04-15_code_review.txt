@@ -1,0 +1,7 @@
+Additional progress on AI, World, Haptic and Interface, merged these into main
+Continuing to add to AI and Haptic
+Salaar and Ibrahim working more on the main game file
+
+Daniel was absent from this session
+
+Next meeting Monday 18th 2pm

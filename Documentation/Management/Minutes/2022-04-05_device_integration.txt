@@ -1,0 +1,9 @@
+Salaar Tianfeng Jiahao Working out how to make device movement alter the board.
+
+Daniel working on backup plan & starting documentation
+
+Ibrahim working on goal state
+
+Lok working on AI
+
+Next meeting is April 6 (tomorrow) in Cobot with Ayse

@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/17-shading.dir/17-shading/17-shading.o  -o 17-shading 

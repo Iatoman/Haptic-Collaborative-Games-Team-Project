@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/10-oring.dir/10-oring/10-oring.o  -o 10-oring 

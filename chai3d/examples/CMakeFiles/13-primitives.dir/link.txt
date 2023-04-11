@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/13-primitives.dir/13-primitives/13-primitives.o  -o 13-primitives 

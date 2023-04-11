@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/09-magnets.dir/09-magnets/09-magnets.o  -o 09-magnets 

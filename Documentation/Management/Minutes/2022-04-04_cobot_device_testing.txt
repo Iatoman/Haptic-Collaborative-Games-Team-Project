@@ -1,0 +1,12 @@
+All attended the lab space to verify that our work-in-progress connects with the device.
+
+Using Tianfeng's demo, our device pointer object has haptic functionality and force
+feedback with the static board and obstacles using the BULLET engine. 
+
+Tianfeng's demo also showed a working grid system in the game that could work with the A* algorithm.
+
+Further work was done regarding our new plan to import a custom object.
+If we move the new board too fast the ball will just phase through and fall
+This problem is to be worked on, but if this isn't solved there exists a backup plan.
+
+Next meeting 5th April in the lab or on teams

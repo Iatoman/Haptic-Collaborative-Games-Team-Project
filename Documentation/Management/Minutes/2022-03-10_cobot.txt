@@ -1,0 +1,8 @@
+went to lab after getting news of issues with device being fixed
+
+DEVICE FIXED
+We were missing a Virtuose.cfg config file in the ODE/bin/lin-x86_64 folder
+Device now works with ODE examples in the original chai3d folder (not git repo)
+
+NEW PROBLEM
+From what we can tell no method exists that replicates the behaviour of addChild() but with ODE collisions added

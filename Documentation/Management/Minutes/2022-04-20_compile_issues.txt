@@ -1,0 +1,9 @@
+Finished cleaning up code so that it all compiles correctly together
+All merges to main must now compile before merging
+
+Salaar + Ibrahim working on game example
+Daniel + Lok working on final report
+Jiahao working on AI 
+Tianfeng working on haptic device integration
+
+Next meeting Sunday 6pm

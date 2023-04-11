@@ -1,0 +1,6 @@
+Finish polishing the content for the interim report
+
+Prototype has been finished and a step by step walkthrough of how it works has been added to the report
+
+All that's left for the report now is to format it with LaTeX and apply finishing touches.
+

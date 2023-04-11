@@ -1,0 +1,11 @@
+
+
+There was a misunderstanding last meeting where some people thought 
+we were going to make classes when instead we can go fully procedural using
+the classes already supplied by the framework. 
+This should be fixed before next meeting. 
+Other people are continuing work on their assigned tasks.
+
+
+
+next meeting Monday 11th 2pm

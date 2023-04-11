@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/18-endoscope.dir/18-endoscope/18-endoscope.o  -o 18-endoscope 

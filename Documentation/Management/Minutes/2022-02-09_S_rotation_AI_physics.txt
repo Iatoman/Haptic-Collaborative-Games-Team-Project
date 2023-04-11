@@ -1,0 +1,15 @@
+final refactoring of class diagram before supervisor meeting
+
+Discussing the question of how to get the board to rotate, none of the functions appear to be changing anything in the demo program
+
+use ODE
+to implement object interactions (collisions) 
+so we can compute collisions automatically instead of simulating it ourselves
+
+paper perhaps suggests a framework for enabling haptic interactions in a game
+
+use a potential field algorithm to compute local routes with collisions against obstacles
+possibly A star algorithm?
+
+Friday 11th Feb 12pm - 2pm next meeting
+next supervisor meeting Wed 16th 3pm

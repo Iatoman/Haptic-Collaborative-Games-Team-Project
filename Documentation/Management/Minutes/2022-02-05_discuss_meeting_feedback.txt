@@ -1,0 +1,4 @@
+refactoring the class diagram, set up new milestones and issues on git
+explore ODE option discussed in meeting
+
+meeting in lab monday 7th 12pm

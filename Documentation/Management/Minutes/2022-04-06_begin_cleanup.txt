@@ -1,0 +1,24 @@
+We have been following the requirements wrong for the majority of this project.
+There is one month left, there is a mountain of work to be done
+
+We are to deliver a haptic board game framework/API that allows for easy creation
+of different board games. What we produce should be comprehensible and well documented.
+
+
+
+We are abandoning board rotation and are planning to implement movement of the ball
+on a static board. This allows for objects to be placed and have perfect collisions,
+thus solving the problems we've been having for weeks.
+
+
+
+
+
+
+
+
+
+
+
+
+NEXT MEETING TEAMS 3PM FRIDAY 6th

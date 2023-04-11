@@ -1,0 +1,15 @@
+Actor changed to ball - rotating board to move ball instead of applying force to ball itself
+User and AI controls classes changed to depend on board instead
+Added methods to certain classes to add clarity to diagram
+User, AI renamed to Userinput, AI_Input
+
+
+
+
+
+
+
+
+
+possibly
+new class for creating levels/board arrangements? how are creating levels, placing obstacles and goals on board/

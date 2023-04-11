@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/08-shaders.dir/08-shaders/08-shaders.o  -o 08-shaders 

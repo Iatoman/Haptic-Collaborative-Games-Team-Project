@@ -1,0 +1,12 @@
+<notes about this meeting>
+
+Remaining tasks:
+	<task1>
+	<task2>
+	
+Assigned tasks:
+	<person1>: <task>
+	<person2>: <task>
+	
+Meeting length: XX mins
+Next meeting: <date>

@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/22-chrome.dir/22-chrome/22-chrome.o  -o 22-chrome 

@@ -1,0 +1,15 @@
+the addChild() method will only add the mesh to the board and not the physical object.
+
+Solutions:
+
+new idea
+use google sketchup to create a board and import 3ds file
+
+possible fix for our board collision problem
+not sure how to make a coordinate system work with this
+
+if that fails there is a backup plan where death zones are used instead of obstacles
+
+next meeting monday 12pm
+
+

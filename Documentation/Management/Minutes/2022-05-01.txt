@@ -1,0 +1,48 @@
+
+Remaining tasks:
+	code:
+		Add comprehensive comments to all code
+		Refactor code to follow coding conventions
+		
+		make a 5 minute video demonstrating what we've done 
+			start with OBS showing our architecture, testing and documentation, explaining all
+			cut to live demonstration of the device working with the program
+			
+		discuss whether a smaller device may work to demo before deadline
+	
+		Add project documentation
+		
+		change setUpWindow() to void return 
+		Rotate camera 90 degrees clockwise to place goal top left and align board with astar array
+	
+	Report:
+		Main report:
+			Abstract
+			Introduction
+			Background
+			Problem analysis
+			Implementation
+				testing
+			Management
+			Future roadmap
+			Summary
+			
+		Manual
+			Coding conventions
+			glossary
+			code structure
+			chai3d and bullet
+			game architecture
+			virtuose
+			
+Assigned tasks:
+	Ibrahim test plan
+	Tianfeng activity diagram
+	Daniel management and editing
+	Jiahao latex formatting haptic device 
+	Salaar requirements and specifications table software manual
+	lok software manual + video intro script
+
+
+Meeting length: 30 mins
+Next meeting: 4pm Monday 2nd May 

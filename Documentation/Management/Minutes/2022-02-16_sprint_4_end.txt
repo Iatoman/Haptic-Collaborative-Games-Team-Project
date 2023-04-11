@@ -1,0 +1,21 @@
+Board movement implemented and working with mouse controls
+
+immediate to do list:
+	
+	collision between ball and board
+	
+	realistic physics interactions for ball
+
+
+
+there are potential dangers behind using callback functions
+
+have another thread separate from main thread which may run AI algorithm every second or so
+player will not divert very far from optimal path in that much time
+
+
+
+
+
+next meeting friday 18th 2pm
+supervisor meeting thursday 24th 2:30pm

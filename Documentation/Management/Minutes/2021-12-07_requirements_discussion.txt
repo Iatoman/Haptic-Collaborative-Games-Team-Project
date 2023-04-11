@@ -1,0 +1,69 @@
+the deliverables are the source code files for the game(s) along with documentation 
+
+emphasis on the reusability of the architecture
+
+interim report:
+	we don't have much of a background in this area so show increased knowledge on haptic devices when compared to the EoI
+	
+	requirement analysis - what should the final end product be?
+
+	implementation and testing
+		what libraries are we using
+		how are we using version control
+
+	show plan for integrating the haptic device into prototype
+	
+	talk about the classes that will make up the product
+
+	the nature of this project means not much testing will have been done at this stage
+	talk about plan for testing at future stages
+
+
+
+game:
+	continuous weighted co-operation between two agents
+	
+	intended to be used in research of human-AI interaction
+
+
+
+	dynamically(?) generated maze where AI may or may not know the correct route
+	at a junction the AI may or may not help the user find the correct path
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

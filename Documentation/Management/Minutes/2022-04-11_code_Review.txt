@@ -1,0 +1,16 @@
+Reviewing all code done since last meeting, providing suggestions
+
+Classes still have to be phased out and turned into pure procedural code
+
+Interfaces could be changed to allow for the creation of any kind of interface a user could
+want, instead of just providing some default start and pause screens.
+
+Daniel will be, for the next couple of days going through all comments and the README and writing about everything
+
+Jiahao and Lok doing more AI work
+
+Tianfeng is still on campus, and so will be progressing with haptic input. 
+
+Ibrahim will progress more on the interfaces and game file with Salaar 
+
+Next meeting Friday 15th 2pm

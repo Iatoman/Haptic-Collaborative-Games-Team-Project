@@ -1,0 +1,35 @@
+
+rearrange repo make neater, modify makefile
+
+Remaining tasks:
+	end the game when ball reaches a goal
+
+		Do not spawn objects or start timer until 'start' is pressed
+			
+		Add comprehensive comments to all code
+				
+		make a 5 minute video demonstrating what we've done 
+			start with OBS showing our architecture, testing and documentation, explaining all
+			cut to live demonstration of the device working with the program
+			
+		discuss whether a smaller device may work to demo before deadline
+		
+	report:
+		write report..
+
+
+
+
+
+
+
+
+Assigned tasks:
+	Everyone on report
+
+
+
+
+
+length: 97 mins
+Next meeting: 19:00 30/04/2022

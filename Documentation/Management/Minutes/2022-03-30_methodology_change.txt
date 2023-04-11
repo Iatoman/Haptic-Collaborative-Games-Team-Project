@@ -1,0 +1,13 @@
+changed methodology to kanban
+scrum with paired programming isn't working for this project:
+	paired programming doesn't work - no experience means we need to pool all knowledge to solve problems
+	issues associated with sprints end up being pushed back 2 or 3 sprints. 
+	
+
+more discussion about A* implementation
+	hard coding level array for the algorithm
+	
+
+
+
+Ibrahim was absent from this session

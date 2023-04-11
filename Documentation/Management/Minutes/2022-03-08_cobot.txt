@@ -1,0 +1,5 @@
+met in cobot space to try and get the device working with ODE examples
+
+Device issues persisted, in fact we found even more 
+device appeared to randomly stop sending data
+turning force feedback on made the device fully extend - dangerous

@@ -1,0 +1,20 @@
+Deadline for interim report draft
+Meeting arranged to go through the entire interim report draft + start creating a small prototype
+
+Jiahao stitched all parts together to create a draft for the entire report
+It needed a lot of polishing - some paragraphs had been copied and pasted
+
+discussed how the prototype was going to look
+	create world, start screen over top
+	user presses start, start screen vanishes
+	a world is displayed containing a board with a ball on top
+
+end of meeting
+got through a lot of draft polishing, prototype build has begun
+still need to write about protoype in report
+
+things to add/re-do
+	background research - daniel
+	test plan - tianfeng
+	start building prototype and document -jiahao
+	polish draft - everyone else

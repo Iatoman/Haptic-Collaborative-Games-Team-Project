@@ -1,0 +1,19 @@
+non existent code
+
+requirements should be what is to be tested
+	re assess requirements for testing
+		load time (1khz haptic response time)
+		
+	have obstacles exist as part of the board
+		if behaviour occurs that would move everything, obstacles would move with the board
+	
+asked to implement a game and there's no game logic in class diagram
+
+how is Chai3D going to be integrated with the game
+
+things have been added to report with no explanation
+
+a simple game with a good architecture will get a good mark
+
+next supervisor meeting is in person 3:30 wednesday 9th B31
+next team meeting is 4pm saturday 5th

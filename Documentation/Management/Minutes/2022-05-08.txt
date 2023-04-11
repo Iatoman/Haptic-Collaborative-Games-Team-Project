@@ -1,0 +1,33 @@
+Need to test device before Wednesday
+
+Remaining tasks:
+	code:		
+		Coding conventions: comments
+		
+		Polish board boundaries
+		
+		Change aStar array to new example
+		
+		Spawn ball in correct location
+		
+	Live demo:
+		Make device work
+		Build loose script
+		
+		rehearse
+		
+		Show Ayse first draft 
+
+
+
+Assigned tasks	
+	Ibrahim: 	
+	Tianfeng: 	
+	Daniel: 	
+	Jiahao: 	
+	Salaar: 	
+	lok: 		
+
+
+meeting length: 46 mins
+Next meeting: 	Sunday May 8th evening?

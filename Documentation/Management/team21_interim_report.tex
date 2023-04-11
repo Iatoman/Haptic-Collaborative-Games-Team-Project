@@ -1,0 +1,390 @@
+\documentclass[a4paper]{article}
+
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[table]{xcolor}
+\usepackage{ragged2e}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[a4paper,left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{hyperref}
+\usepackage{cite}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\ttfamily\footnotesize},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    pdfpagemode=FullScreen,
+    }
+
+
+%%
+%% end of the preamble, start of the body of the document source.
+
+
+\begin{document}
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+
+
+\begin{titlepage}
+   \begin{center}
+        \includegraphics[width=0.6\textwidth]{university.jpg}
+        \vspace*{2cm}
+
+        \huge
+        COMP2002: Interim Group Report
+        
+        \vspace{0.3cm}
+        
+        \LARGE
+        Haptic Collaborative Games
+            
+        \vspace{2cm}
+
+        \Large
+        Jiahao Wang, Daniel Lambert, Tianfeng Chen, \protect\\ Salaar Mir, Ibrahim Atomanson, Lok Lam 
+       
+        \vspace{1cm}
+       
+        Supervised by Ayse Kucukyilmaz
+   \end{center}
+\end{titlepage}
+
+
+\tableofcontents
+\clearpage
+
+
+\section{Introduction}
+\subsection{Motivation}
+Nowadays, most gaming experiences are just controller or keyboard \& mouse, which lack any sophisticated haptic force feedback, whereas this project can offer more diversity in the games through taking advantage of haptic devices. For example, when a user's plane crashes in a flying game, the joystick could be pushed back suddenly, increasing immersion and the magnitude of corresponding forces can be simulated. In addition, the AI aspect was of particular interest to our group, the potential to develop simple AI algorithms together with 3D graphics being a key motivation for this project.
+
+\subsection{Aims and Objectives}
+Our team aims to implement a 3D haptic game for use in research of Human-Computer interaction that can be controlled by a haptic device (or another input device like keyboard and mouse), which allows three interaction settings: human + human, human + AI, and AI + AI. With the help of the haptic device, users will be able to feel forces due to game dynamics, the AI’s movements, as well as repulsion forces. In addition, we aim to implement forces from AI assistance on the user to help achieve their objective in the game. For example, if the ball a user is controlling is moving away from the target, the AI could apply a force in the haptic controller to push back or make it increasingly difficult for the user to go the wrong way.
+
+\section{Background Information and Research}
+\subsection{Overview}
+Haptic technology, also referred to as Kinaesthetic technology, is any technology that can create an experience of touch by applying forces, vibrations, or motions to the user. We understand that haptic guidance systems can be further improved if they are equipped with predictive and progressive mechanisms. Hence, we’ll be trying to apply this to our game, e.g., by predicting the fastest way to reach an end goal. The specified device we’re working with is a Virtuose 6D device for large desktops. This is a very complex, high force feedback device that can be used in a great range of applications such as robotic controlling/remote handling, rehabilitation applications (i.e. following surgery and using the device to carry out exercises in VR), the device can be used as a co-manipulation medical robot used in surgical procedures and also in 3D games to generate immersive and realistic experiences by feeling forces such as friction or gravity. 
+
+Our game is based on the CHAI3D framework (Computer Haptics and Active Interface), which is an open-source set of C++ libraries for computer haptics, visualisation and interactive real-time simulation. The framework has the following advantages:
+\begin{itemize}
+    \item It offers abundant force rendering algorithms, which can be utilised to compute the interaction forces among objects within the environment.
+    \item It provides the necessary data structures required to realise static, dynamic and articulated bodies in different scenarios.
+    \item It supports the lightweight OpenGL-based graphics engine which can easily create Mesh Objects, Line Segments and Volume Objects with surface materials and texture properties.
+    \item It applies 3D files from professional applications such as Autodesk 3D Studio Max and Alias Wavefront to provide sophisticated 3D Animation.
+\end{itemize}
+
+In terms of graphics, we’ll be using OpenGL (which is closely intertwined with the framework), a software interface to graphics hardware, which consists of abundant distinct commands that can be utilised to specify the objects and operations needed to produce interactive three-dimensional applications. For more context, if a force is applied to an object which causes it to change direction, OpenGL is used to render objects and present that change on the screen.
+
+\subsection{Prior Research}
+As stated before, this project exists so that the game we produce can be used in the research of human-computer interaction. Considering this, we intend to build our game in a way that maximises the impact of the research being done. These papers make use of games already implemented to produce research.
+
+\subsubsection*{Supporting Negotiation Behaviour with Haptics-Enabled Human-Computer Interfaces \cite{oguz2012supporting}}
+This paper applies the concepts from negotiation (a type of game theory) and haptic collaboration to the game. Specifically, the designed game allows the human to interact with a computer player in a dynamic environment, while the computer could take three negotiation strategies (concessive, competitive, and tit-for-tat behaviors). Their goals are both to control the separate ball to collect coins.
+
+In the same way in our game, we want to be able to apply two strategies (concessive and competitive behaviors) to AI guidance. We would add different magnitudes of the force through haptic devices to show the status of competition or collaboration. 
+
+\subsubsection*{Intention Recognition for Dynamic Role Exchange in Haptic Collaboration \cite{kucukyilmaz2012intention}}
+
+This paper researches intuitive haptic communication between humans and computers in collaborative systems through the deployment of a haptic role exchange (RE) mechanism. Specifically,  in this haptic board game, the user is asked to control the position of a ball with a haptic device to move to a specific place on the game board and hold it there for an amount of time. This is done in all four corners of the board before the game ends. 
+
+Our game will be similar to this but with an added twist. In our implementation, we would adopt this RE mechanism for the input forces for our ball. We would introduce an increasing number of obstacles for both parties to navigate around and eventually the board would resemble a maze. This would involve building more complicated motion planning algorithms for the AI to route around objects in its path. This is discussed later.
+
+\section{Requirement Analysis}
+Initially, we had quite an extensive list of high-priority requirements we were aiming to complete for this project, however after certain setbacks that caused us to lose substantial amounts of time we had to narrow down our list to prioritise certain goals over others. We ended up with three high-priority requirements that we decided were crucial, as well as a list of medium and low priority requirements that we would focus on once we had fully satisfied the high-priority needs. A comprehensive list of these requirements as well as how we plan to complete them can be found in Table~\ref{tab:my_label1}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5.5cm}|p{2cm}|p{5.5cm}|}
+        \hline
+        Requirements & Priority & Specifications  \\
+        \hline
+        Users should be able to play the game with a mouse and keyboard & 
+        \cellcolor[HTML]{FF9999} High &
+        Allow the user to have the option of playing with a keyboard or a haptic joystick.  \\
+        \hline
+        Users should be assisted by an AI when needed, which can attempt to correct the players’ movements &
+        \cellcolor[HTML]{FF9999} High &
+        The AI will consist of simple motion planning algorithms that move the agent in the correct direction towards the goal. \\
+        \hline
+        Users should be able to play the game with the Haption Virtuose Device &
+        \cellcolor[HTML]{FF9999} High &
+        The game needs to be intertwined with the CHAI3D library that the device uses to operate. \\
+        \hline
+        Previous game results of users should be able to be saved for analysis &
+        \cellcolor[HTML]{FFFF99} Medium &
+        The game will store data from the game in a database that stores times with a unique ID. \\
+        \hline
+        Users should be able to play the game with other users or with an implemented AI &
+        \cellcolor[HTML]{FFFF99} Medium &
+        Human + Human could be implemented through the incorporation of a second haptic device or a combination of device and k.b.m. Human + AI could be added through the inclusion of an AI algorithm that can identify and successfully reach a goal state. \\
+        \hline
+        Users should have a selection of games to play from using the haption virtuose device &
+        \cellcolor[HTML]{CCFF99} Low &
+        These games should use the same basic architecture. \\
+        \hline
+    \end{tabular}
+    \caption{Functional Requirements and Specifications}
+    \label{tab:my_label1}
+\end{table}
+
+We also have a set of non-functional requirements we want to satisfy for this project. These can also be found in Table~\ref{tab:my_label2}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{6cm}|p{2cm}|p{3cm}|}
+        \hline
+        Non-Functional Requirements & Priority & Category \\
+        \hline
+        This software runs on many operating systems, such as Microsoft Windows, Linux and Apple Mac OS X. &  \cellcolor[HTML]{FF9999} High
+        &
+        Compatibility \\
+        \hline
+        Pages will be adapted to the screen size. &
+        \cellcolor[HTML]{CCFF99}Low &
+        Compatibility \\
+        \hline
+        When this software is opened, the load time of it is reasonable (no more than 5 seconds). &
+        \cellcolor[HTML]{FFFF99} Medium &
+        Preformance \\
+        \hline
+        The software will be able to give a quick response (no more than 0.2 seconds) when users interact with the haptic device. &
+        \cellcolor[HTML]{FFFF99} Medium &
+        Performance \\
+        \hline
+        The naming of source files and variables is clear and understandable. &
+        \cellcolor[HTML]{CCFF99}Low &
+        Maintainability \\
+        \hline
+        Modular programming that separates game graphics and logic from haptics and physics-based simulation is adopted to facilitate maintenance. &
+        \cellcolor[HTML]{FF9999} High &
+         Maintainability \\
+        \hline
+        Comments will be written for each small module to explain their usages. &
+        \cellcolor[HTML]{CCFF99}Low &
+        Maintainability \\
+        \hline
+        The system allows easy modification in terms of changing the game logic and AI behaviour. &
+        \cellcolor[HTML]{FF9999} High &
+         Maintainability \\
+        \hline
+         Results obtained are not accessible to users. &
+        \cellcolor[HTML]{FF9999} High &
+        Security \\
+        \hline
+    \end{tabular}
+    \caption{Non-Functional Requirements}
+    \label{tab:my_label2}
+\end{table}
+
+\section{Approach in Management}
+Agile development takes an iterative, step-by-step approach to software development, with the evolution of the user’s needs at its core. In Agile development, a software project is initially built and divided into sub-projects, the results of which are tested, visualised, integrated and ready for use. Specifically, our approach in management consisted of a Scrum-based framework combined with paired programming. 
+
+In the brief time the team has worked together, we used this approach and can reflect on its usefulness. Paired programming has proven to be effective both in terms of motivation to get through the workload, and pooling knowledge to come up with solutions more effectively to solve complex problems – a crucial aspect given the trouble we had learning the CHAI3D framework. Fortnightly sprints gave us the necessary pressure required to get work done in time for meetings with our supervisor. However, having daily scrum meetings as set out by the framework hasn’t yet worked out for this project. In a large-scale project with developers working full time, having daily meetings is effective, but in our case we are only working “part time” and it only makes sense to meet on days where we all decide to progress the project. We may consider adapting our approach by switching to Scrumban for the remainder of our project because proper use of a Kanban/Scrumban board and emphasis on clarity of communication is likely to increase our effectiveness as a team.
+
+In addition, we have milestones and issue tags for each sprint on our Git project page, and each sprint is well defined with a clear target for its duration. Sprints are documented rather simply (for now) using a table in the README on the project Git page. Minutes are also kept of meetings with our supervisor, but not of quick meetings with just the team. This has proved to be sufficient for now while we’re just getting started and are in the proof-of-concept portion of the project. The plan is to begin proper documentation of sprints (involving the planning of goals and end-of-sprint reviews and retrospectives with minutes for all meetings) when heavy-duty development of our game architecture begins in the new year.
+
+\section{UML Diagrams}
+\subsection{Activity Diagram}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{activity_diagram.jpg}
+    \caption{Activity Diagram}
+    \label{fig:activity}
+\end{figure}
+
+\subsection{Class Diagram}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{class_diagram.jpg}
+    \caption{Class Diagram}
+    \label{fig:class}
+\end{figure}
+
+\section{Prototype}
+\subsection{Architecture}
+Based on the CHAI3D framework, we have designed two interfaces already to realize the architecture of our prototype. One is the StartGame interface, which defines a panel including the labels ‘Start’, ‘Settings’ and ‘Exit’. 
+The ‘Start’ button allows access to the main game interface. The ‘Settings’ button allows access to the interface for changing game difficulty, aspects of the world, levels of AI interaction and others. The ‘Exit’ button is straightforward and exits the game.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{startgame.png}
+    \caption{StartGame Interface}
+    \label{fig:startgame}
+\end{figure}
+
+The other one is the MainGame interface, which displays the game world.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{maingame.png}
+    \caption{MaintGame Interface}
+    \label{fig:maingame}
+\end{figure}
+
+The following is a step-by-step documentation of how our prototype works:
+\begin{enumerate}
+    \item Initialise GLFW library and all necessary parameters to display the game world.
+    \item Create a world whose background colour is set to white. The world acts as the root node of the entire scene graph for the insertion of objects, light sources and cameras. Specifically, the camera can capture the view of objects in the game world from an ideal location and the directional light source for the camera can enhance the visual effects of the objects in the scene. 
+    \item Create required objects inside the world, and corresponding material and texture properties, as well as motion-based properties, are assigned to the object. Now, the world contains a ball and a board.
+    \item When the scene is built, we can start a new thread that runs independently from the graphics thread. Initially, the centre position of the board in the world is computed and stored. At every iteration, the position in global coordinates is computed for the ball and the display is then updated. The velocity of the ball changes with its distance from the centre of the world. The ball may collide with the board, at which point the resulting velocity of the ball is changed, simulating a collision. In particular, the details are showed as follows.
+\end{enumerate}
+
+\begin{lstlisting}[language=C++, caption=Graphic Simulation]
+// get position of cursor in global coordinates
+cVector3d toolPos = tool->getDeviceGlobalPos();
+
+// get position of object in global coordinates
+cVector3d objectPos = sphere->getGlobalPos();
+cVector3d boxPos = box->getGlobalPos();
+
+// compute a vector from the center of mass of the object (point of rotation) to the tool
+cVector3d v = cSub(toolPos, objectPos);
+
+// compute angular acceleration based on the interaction forces
+// between the tool and the object
+cVector3d angAcc(0,0,0);
+cVector3d linAcc(0,0,0);
+cVector3d forceTool(0,0,0);
+
+// compute force that centers object at origin
+cVector3d force = -0.2 * objectPos;
+
+// update linear acceleration
+const double MASS = 1.0;
+linAcc = (1.0 / MASS) * (force + forceTool);
+
+// update angular velocity
+angVel.add(timeInterval * angAcc);
+
+// update linear velocity
+linVel.add(timeInterval * linAcc);
+
+// simulate collision
+if (objectPos.z() < boxPos.z() + 0.1)
+{
+    linVel.z(-linVel.z());
+}
+
+// set a threshold on the rotational velocity term
+const double MAX_ANG_VEL = 10.0;
+double vel = angVel.length();
+if (vel > MAX_ANG_VEL)
+{
+    angVel.mul(MAX_ANG_VEL / vel);
+}
+
+// add some damping too
+const double DAMPING = 0.1;
+angVel.mul(1.0 - DAMPING * timeInterval);
+linVel.mul(1.0 - DAMPING * timeInterval);
+
+// if user switch is pressed, set velocity to zero
+if (tool->getUserSwitch(0) == 1)
+{
+    angVel.zero();
+    linVel.zero();
+}
+
+// compute the next rotation configuration of the object
+if (angVel.length() > C_SMALL)
+{
+    sphere->rotateAboutGlobalAxisRad(cNormalize(angVel), timeInterval * angVel.length());
+}
+
+// compute the next position of the object
+cVector3d nextPos = sphere->getLocalPos() + (timeInterval * linVel);
+sphere->setLocalPos(nextPos);
+\end{lstlisting}
+
+
+\subsection{AI Design}
+In our game, AI will assist the user to reach the goal, and it includes two behaviours: concessive and competitive. For concessive behaviour, AI will guide the user to the final destination by applying the force to the ball along the optimal path. If the user resists the AI’s input (e.g., he walks in an opposite direction) above a certain threshold, the AI will alter its state to competitive, increasing its force on the ball. 
+
+To implement the AI we could lay nodes across the board and compute an optimal path around the obstacles using Djikstra’s algorithm. The AI will encourage the user to follow this path by applying forces. If the user veers too far off the optimal path it may cease to be optimal. The algorithm could be run multiple times and new paths found.
+
+
+\subsection{Testing}
+Software testing plays a key role in validating whether the working software meets the requirements and works as expected. However, due to the attributes of our project, detailed testing is yet to be fully implemented. Therefore, in this section, we are going to discuss the overview of the testing plan for future development.
+
+\subsubsection*{Unit Testing}
+Unit testing focuses on testing individual methods or functions within a class (e.g., Constructors \& Destructors). In our project, we are planning to use automated testing tools to test each method via a C++ Testing Framework (e.g., Google Test, Boost.Test, Catch2, and Doctest). These testing frameworks can be perfectly integrated into IDEs (Visual Studio/CLion) and are easy to implement. In addition, to follow the guidelines of Test Driven Development (TDD), all testing scripts should be done before the real implementation of methods. The coverage of testing inputs should also be taken into account, and memory leaks should be frequently checked using Valgrind or other software. 
+
+\subsubsection*{Integration Testing}
+In the phase of integration testing, the interfaces between components should be verified, and the integrity of a single class should be examined. This makes automated testing difficult to implement. Therefore, in this phase, we will spend most of the time on manual testing. For example, to test the behaviour of a `Board` class, we will try to create a board with different input parameters, such as sizes, textures, colours, and see whether it behaves as expected in the GUI.
+
+Integration tests usually involve a lot of code, and this has an impact on the ease of localising the fault when an integration test fails. Hence, to mitigate this issue, it is expected to divide the large tests into smaller pieces.
+
+\subsubsection*{System Testing}
+The main job in the phase of system testing is GUI testing. There are a couple of methods to approach GUI testing, consisting of:
+
+\begin{itemize}
+    \item Manual Testing
+    \item Record and Replay Testing
+    \item Model-based Testing
+\end{itemize}
+
+Due to the complexity of automated/visualised GUI Testing Framework, it is more preferable to choose manual testing in our project, which is more practical. Also, GUI test scripts are highly expected to keep track of the testing progress.
+
+% TODO: Add link
+Please see \href{https://docs.google.com/document/d/1Of_F73lLm8gSInwTWr7jOGn-hGaFQyB_CK64t97rgiY/edit?usp=sharing}{here} for a link to our test plan.
+
+\section{Reflections}
+\subsection{Technical Issues}
+We initially planned on using Unity due to its popularity and the potential to gain valuable experience,  but the device used in the project already works using CHAI3D, so we decided to change our approach to not add needless difficulty.
+
+Initially, when we were bidding for the project, our supervisor can attest that we did not have a firm grasp on the requirements. However since then after researching the background and meeting up with each other to understand the project we began to get a better grasp of the task at hand and what is required. We also had very little experience with CHAI3D, OpenGL and C++. As a result, we had to use valuable time as a discovery phase which significantly decreased the time we had to develop a prototype. The first two weeks were focused on learning the frameworks and interacting with the haptic device. We should accept projects that meet our group strengths or gain more experience in different fields of programming to be flexible on project selection.
+
+\subsection{Management Issues}
+In terms of our time management, regretfully a lot of time was wasted at the beginning of the project after being selected. We had to commit a lot of time in the beginning to understand what the deliverables were and to grow accustomed to the frameworks we would be using. As a result, we ended up having to “crunch” much of the remaining work later on by having near daily meetings as all our deadlines drew nearer.
+
+We have much room for improvement concerning our team skills. As a group, we can collaborate well and are very good at listening to others’ input but most of our communication in and outside of meetings is disproportionate between members. Some of our members are much more vocal than others. People need to be encouraged to speak up more and share their ideas.
+
+The communication during the first week of the project was inadequate and slow. There were times where we were trying to meet with our supervisor but were unable to due to us not making use of all resources available to us and communicating effectively, however, since then this has been rectified through frequent use of messaging services and there has been a much smoother and regular means of communication in our meetings. 
+
+We set up our GitLab repository to track our progress by week 3 which we feel is late, due to the discovery phase. We understand the importance of GitLab and that it should have been used as soon as we were assigned the project and issues and milestones set up. We needed to have set it up earlier regardless of whether we had any actual code-related progress to push. It really could have helped our organisation early on.
+
+\section{Roadmap}
+At the start of the next term, we are going to build a new version of the game every two weeks. Functionality such as mouse/keyboard input, physics engine and basic GUI will be developed in the first stage of development. Then, Haptic input and AI input will be developed throughout the second stage. Finally, a database for storing results and polishing the GUI will be the focus of the final stage. We will keep up consistent meetings with our supervisor for feedback and strive to make the best out of the limited time we have. Should we have extra time left after finishing our first game, we will use the architecture created for the initial game to develop additional games.
+
+\section{Summary}
+In conclusion, this first term was a great (and sobering) experience to work with academics with plenty of experience on how to manage a project. We as a group had met a lot of problems working as a team and gained much experience in teamwork and providing quality solutions. We hope this experience will transfer into the second semester and keep our group working effectively. We now also understand that having more developers in a project does not necessarily translate to increased productivity. Having good communication between supervisors and being willing to take the lead and actively contribute to meetings will benefit our group the most.
+
+\bibliography{sample-base}
+\newpage
+%%
+%% If your work has an appendix, this is the place to put it.
+
+\appendix
+
+
+\end{document}

@@ -1,0 +1,15 @@
+acting on feedback from interim report
+
+discuss feedback report from Ayse
+	multiplatform - project is supposed to run using ubuntu
+	more use of trello board with evidence
+	In depth explanation on diagrams
+	Better usage of UML diagrams
+	Application of basic OOP principles 
+	(abstraction, inheritance, polymorphism etc.)
+	Project management skills should be presented
+	
+rearranging supervisor meeting to avoid conflict
+
+a consensus was made that we need to discuss feedback before we proceed with implementation
+

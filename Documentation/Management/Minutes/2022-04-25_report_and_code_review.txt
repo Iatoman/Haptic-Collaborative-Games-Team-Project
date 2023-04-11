@@ -1,0 +1,36 @@
+Work has started on the main report. 
+
+Went over some problems concerning the code.
+	No ball movement using CHAI3D's built in force application functions.
+	currently unable to get the ball to move.
+	
+Remaining tasks:
+	code:
+		move ball by applying force
+		end the game when ball reaches a goal
+		
+		make the ball respond to mouse movement
+			ball always tries to move towards mouse position
+				the further the ball is from the mouse, the greater the force
+		make the ball respond to movement from the device in the same way.
+			the further the ball is from the haptic cursor, the greater the force
+
+		Add 'addInvisibleWalls' and 'removeInvisibleWalls' to Board.cpp
+		
+		
+		Do not spawn objects or start timer until 'start' is pressed
+	
+	
+		Add comprehensive comments to all code
+	
+	report:
+		write report..
+		
+
+Tasks:
+	Salaar: invisible walls
+	Daniel + Lok: report writing
+	Tianfeng + Jiahao: mouse + haptic + ball movement
+	Ibrahim: start screen + something from trello
+	
+Next meeting Tuesday 26th April 8pm

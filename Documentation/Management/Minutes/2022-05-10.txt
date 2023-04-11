@@ -1,0 +1,14 @@
+We can demonstrate force feedback successfully with geomagic touch with windows,
+linux did not work. 
+
+Remaining tasks:
+		
+	Live demo:
+		Make device work
+		rehearse
+		
+		
+
+
+meeting length: too many minutes.
+Next meeting:  11/5/2022 9am Demo day

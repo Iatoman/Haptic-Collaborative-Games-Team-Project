@@ -1,0 +1,19 @@
+game is a tool for reasearch about interactions
+
+use a single class for graphical and haptic elements
+
+the AI class requires an understanding of the world so it can assist
+
+it was suggested that we only control the ball 
+	spring based static system to control the ball 
+	-read the paper
+
+human control class should be symmetric to the AI class
+
+stretch goal: 
+	could have dynamic obstacles that move when hit
+
+prototype:
+	implement a scene using one of the designed classes
+	(create a world, a board and put a sprite on top that can move around)
+

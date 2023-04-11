@@ -1,0 +1,418 @@
+\documentclass[a4paper]{article}
+
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[table]{xcolor}
+\usepackage{ragged2e}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[a4paper,left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{hyperref}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\ttfamily\footnotesize},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    pdfpagemode=FullScreen,
+    }
+
+%%
+%% end of the preamble, start of the body of the document source.
+
+
+\begin{document}
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+
+
+\begin{titlepage}
+   \begin{center}
+        \includegraphics[width=0.6\textwidth]{university.jpg}
+        \vspace*{2cm}
+
+        \huge
+        Haptic Collaborative Games
+        
+        \vspace{0.3cm}
+        
+        \LARGE
+        COMP2002 / G52GRP: Final Report
+            
+        \vspace{2cm}
+
+        \Large
+        \textbf{Project Information:} 
+         \vspace{0.2cm}
+         \protect\\     Project title:
+        UoN-HapticCollaborativeGames\\
+        Project sponsor: Ayse Kucukyilmaz\\
+        Academic supervisor: Ayse Kucukyilmaz\\
+        
+       
+        \vspace{1cm}
+       
+        \textbf{Team information:}\\
+        \vspace{0.1cm}
+        Team number: 21\\
+        \vspace{0.1cm}
+        Salaar, Mir, 20275881, psysm13 \\
+        Daniel, Lambert, 14328665, ppydl3\\
+        Tianfeng, Chen, 20215546, scytc1\\
+        Jiahao, Wang, 20217166, scyjw5, \\
+        Ibrahim, Atomanson, 20265875, psyia3\\
+        Lok Him, Lam, 20219626, efyll1\\
+
+   \end{center}
+\end{titlepage}
+
+\newpage
+\textbf{Documentation (links):}\vspace{0.5cm} \newline
+\hspace*{10mm} Trello board: \url{https://trello.com/b/ZC3MWaD7/haptic-collaborative-games}\vspace{0.5cm} \newline
+\hspace*{10mm} Code repository: \url{https://projects.cs.nott.ac.uk/comp2002/2021-2022/team21_project}\vspace{0.5cm} \newline
+\hspace*{10mm} Document repository: \url{https://projects.cs.nott.ac.uk/comp2002/2021-2022/team21_project/-/tree/main/Documentation} \newline
+\newpage 
+
+\tableofcontents
+\clearpage
+
+\section{Interim Report Changelog}
+Modifications to specific sections of the report from Interim:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{7cm}p{8cm}}
+
+        1 Introduction:
+        &
+        Heavily modified | Combined with background \\
+
+        2 Background Information and Research: 
+        &
+        Removed \\
+
+        3 Requirements Analysis:
+        &
+        Heavily modified \\
+
+        4 Management:  
+        &
+        Heavily modified \\
+
+        5 UML Diagrams:
+        &
+        Integrated with implementation \\
+
+        6 Prototype:
+        &
+        Removed \\
+
+        7 Reflections:
+        &
+        All subsections combined into their relevant sections \\
+
+        8 Roadmap:
+        &
+        Heavily modified \\
+
+        9 Summary:
+        &
+        Heavily modified \\
+
+    \end{tabular}
+    \caption{Changelog of the report}
+    \label{tab:changelog}
+\end{table}
+
+\section{Introduction}
+\subsection{Background}
+\subsubsection{Haptic Technology}
+Haptic technology applies a combination of forces, vibrations and motions to a user in order to create an experience of touch. Devices employing haptic technologies boast a wide variety of applications. Some of the most common and simple haptic technologies come in the form of tiny motors that users would find in any smartphone that spins and creates vibrations when, for example, the user receives a notification. Motors are also found in game controllers that might vibrate when something such as an explosion occurs in a game, with the objective of increasing immersion. Taking a step up, some more sophisticated haptic devices like racing game steering wheels use force feedback to manipulate the movement of the wheel held by a user. Racing wheels specifically attempt to simulate real-life racing conditions by applying forces to turn the wheel when driving over rough terrain or turning a corner. 
+
+\vspace{5mm}
+\noindent The Haption Virtuose 6D \cite{ref1} is one of the most sophisticated haptic devices to date, combining high force feedback in six degrees of freedom (see Figure \ref{fig:intro_img}) with a large workspace. Force feedback on this sort of free movement device unlocks many possibilities. Contact between a haptic device cursor with a static object in virtual space causes forces to be applied to the arm in such a way that it creates the illusion that users are feeling the shape or textures of the object in real space. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.2]{intro_img.png}
+    \caption{A diagram showing the six degrees of freedom \cite{ref2}}
+    \label{fig:intro_img}
+\end{figure}
+
+\subsubsection{Collaboration Based Research}
+A key consideration of our project is how to implement variable collaboration in a game with inputs from two agents. The following paper discusses this topic and forms the basis of our project.
+\\ \\ \textbf{Intention Recognition for Dynamic Role Exchange in Haptic Collaboration \cite{ref3}} \\
+This paper proposes that a computer’s ability to improve efficiency and effectiveness when aiding humans in dynamic tasks are limited because they lack human adaptability, versatility and awareness. If there exists a computer that can infer its human equivalent’s intentions and adjust their respective control levels accordingly, it might facilitate a more intuitive interaction setup. 
+\\ \\ 
+To investigate this, the paper proposes a “dynamic role exchange mechanism” where two partners negotiate their control over a task through a haptic channel that may increase their joint efficiency. A haptic negotiation model is used where force negotiation is achieved by setting two stiffness constants, $K_{p,H,N}$, $K_{p,C,N}$, and one for each agent. These constants set the control levels for each input. The computer infers a user’s intentions by his/her movements: a human is assumed to take control of movements requiring a large amount of force, such as large open areas, but when the user slows down, the computer infers that control is being surrendered so that it can provide more precise movements. The board game built by the authors provides large spaces for greater force to be applied and also narrows channels intended to be more efficient for computer dominated movement.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{essay_img.png}
+    \caption{The paper’s proposed haptic board game}
+    \label{fig:essay_img}
+\end{figure}
+
+\noindent The authors construct the board game (see Figure \ref{fig:essay_img}) which contains four narrow channels for the ball to move towards several goals, with pits on either side of each where the player has to start the entire task over if they fall in. The player has to hit all four goals before the game ends. This design is chosen to create an environment where the AI and the player are more effective than each other at different points during the task. The authors show that this role exchange mechanism improves task performance and the joint efficiency of the partners.
+
+\subsubsection{The CHAI3D Framework}
+Our work is built on top of the CHAI3D\cite{ref4} (Computer Haptics and Active Interface) framework - an open-source set of C++ libraries for computer haptics, visualisation and interactive real-time simulation. CHAI3D was developed to provide a simple and compact framework for introducing experimental haptics to the research community. Written entirely in C++, CHAI3D was designed to make it easier and more intuitive for developers to create applications that combine 3D modelling with force-feedback rendering capabilities.
+\\ \\ 
+The framework has multiple advantages specific to our requirements: 
+\begin{itemize}
+    \item An abundance of force rendering algorithms can be utilised to compute the interaction forces among objects within an environment.
+    \item Full integration with a lightweight OpenGL-based graphics engine which provides the foundations to easily render Mesh Objects, Line Segments and Volume Objects with surface materials and texture properties.
+    \item Full support for integration with a range of haptic devices with six degrees of freedom and high-level force feedback. 
+    \item Full integration with third-party dynamics engines like Bullet and ODE, making it possible to simulate rigid and deformable bodies in real-time to help imitate a physical task.
+\end{itemize}
+
+\subsection{Main Objectives}
+In this project, we aimed to create a logical software architecture for implementing 3D haptic games for use in research. These games could be controlled by both normal input devices, and a more sophisticated haptic force feedback device. With the help of this device, users would be able to feel forces due to game dynamics and the input from the AI trying to collaborate. \\
+
+Therefore, our most important objectives for the project were as follows:
+\begin{itemize}
+    \item Create an easy-to-understand API that simplifies the creation of haptic games.
+\\ This meant our API had to have a modular structure and strong documentation so that whoever might use our framework to create a game to their specifications can do so with ease.
+    \item Build convincing motion planning for an AI that allows collaboration with a human user.
+\\ This meant we had to carefully consider how to handle two agents providing inputs to an object and decide on the right algorithm to balance processing time with the precision of the optimal path.
+    \item Build the project using stellar software engineering principles to facilitate productivity.
+\\ To accomplish this we needed from the beginning to keep our directory structure clean and readable, make use of existing tools like Trello to keep track of all tasks, have consistent meetings after development including with our supervisor, and reflect on our successes and shortcomings during such meetings. 
+\end{itemize}
+
+\section{Problem Analysis}
+\subsection{Analysing the Brief}
+We got a list of requirements from the brief and chose suitable tools to achieve them. For the non-functional requirements, several aspects needed to be valued. For proper functionality, this software must run on Linux and screens would be adapted to the screen size. For performance, the software will be able to give a quick response (no more than one second for AI to compute the optimal path).
+When users interact with our software, the force feedback that the user feels cannot exceed the maximum force feedback that the haptic device can provide. For maintainability, modular programming has been adopted to facilitate maintenance, and the naming of source files and variables is clear and understandable.
+
+\subsubsection{Requirement Analysis} 
+For functional requirements, several parts are analyzed in detail.
+
+Firstly, we are supposed to complete at least one game with game graphics, physics simulation and haptic feedback. This was a very basic requirement, and we implemented a 3D haptic game architecture to create a basic example we called  "The Maze Game". We decided on a maze-based board game architecture because it could be based on prior research. CHAI3D could easily create exactly the objects we required in a game world. The Bullet engine could also be applied to them to realize realistic physics simulations such as collision detection and applied force vectors. The user can feel haptic force feedback when the ball moves on the maze map. In addition, a review of literature inspired the path finding algorithm, we designed a similar mechanism.
+
+Secondly, we were supposed to have three interaction settings, including Human vs. Human, Human vs. AI, AI vs. AI, but considering that there is only one haptic device, the requirement of making the game multiplayer is unachievable and would have added too much scope. Instead, we decided that having the user collaborate with an AI would be achievable. Therefore, we decided not to make the game competitive but instead teamed up the user and AI, where the AI uses artificial guidance to keep the user on the right track, a change in requirements which was agreed upon with our supervisor. However, if more than one device becomes available later, users can do simple modifications to allow the game to be compatible with two players. 
+
+Thirdly, it is required to be possible to run the game without connecting a haptic joystick (i.e. play should be possible using a game-pad without haptic rendering capabilities). Hence, we planned to create two versions, one is controlled by a haptic device and the other one is controlled by a mouse because users have mouse equipment available at any time.
+
+Fourthly, we were supposed to construct the modular software structure to separate game graphics and logic. At first, we used a singleton type design pattern to accomplish the logical software architecture, whilst when getting familiar with the purpose of each function and having a better understanding of the whole structure, we were then able to implement a more procedural programming approach, creating header and source files for different elements of the game separately.
+
+Fifthly, we are supposed to allow easy modification of the system in terms of changing the game logic and AI behaviour. We understood that as long as the previous modular software structure has been made accurately with separating game graphics (each element of the game is in different files) and logic and clear extension instructions are provided, this requirement could be met easily.
+
+A comprehensive list of detailed requirements and specifications that we collated when we analysed the brief can be found in Table~\ref{tab:my_label1}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{6cm}|p{6cm}|}
+        \hline
+        Requirements & Specifications  \\
+        \hline
+        Users should be able to play the game with a mouse and keyboard, as well as a haptic joystick
+        &
+        Give the user the choice of input device they wish to use.  \\
+        \hline
+        Users should be assisted by an AI when required, which can provide more precise movements. 
+        &
+        The AI must consist of simple motion planning algorithms that move the agent in the correct direction towards the goal. \\
+        \hline
+        Users should be able to play the game with the Haption Virtuose 6D Device. 
+        &
+        The API needs to be intertwined with the CHAI3D library that the device can use to operate as well as the Bullet physics engine to allow for collision detection and applied forces. \\
+        \hline
+        Users should have a game to play that is easily modifiable into other games that still implements the  Haption Virtuose 6D Device.
+        &
+        These games should use the same basic architecture to allow for easy modifiability. \\
+        \hline
+        Users should be able to browse through different interfaces of the game to allow for better interactivity. 
+        &
+        The game should have a variety of different interfaces such as a start and pause screen for users to interact with. \\
+        \hline
+        Previous game times of users should be stored for the possibility of later analysis and viewing.
+        &
+        The game will store its data in a database to be viewed by users on request. \\
+        \hline
+        Modular software structure should separate the game graphics and logic from haptics and physics-based simulation.
+        &
+        Keep code organised in many aptly named source files in logically built functions to separate different aspects. \\
+        \hline
+        Users should be able to play the game with other users or with an implemented AI.
+        &
+        Human + Human game-play would be unachievable provided only one haptic device. Human + AI can be added through the inclusion of an AI algorithm that can identify and successfully reach a goal state. \\
+        \hline
+    \end{tabular}
+    \caption{Functional Requirements and Specifications}
+    \label{tab:my_label1}
+\end{table}
+
+
+\section{Implementation}
+\subsection{AI Design}
+
+In our game, an AI collaborates with the user to reach a goal state. We have accomplished this using an implementation of the A* search algorithm to plan an optimal path based on current positions. The reason why we utilised this algorithm is that it can find the shortest path of state space search in a short period of time with a high search space. We defined evaluation functions ($f(n) = g(n) + h(n)$) to increase the possibility of finding the correct path. Specifically, $f(n)$ is the comprehensive priority of node n. When we choose the next node to traverse, we always choose the node with the highest comprehensive priority (the lowest value). $g(n)$ is the cost of node n from the starting point. $h(n)$ is the estimated cost of node n from the end point, which is the heuristic function of astar algorithm. We will explain the heuristic function in detail below. In the operation process of astar algorithm, the node with the lowest $f(n)$ value (the highest priority) is selected from the priority queue every time as the next node to be traversed. In addition, the astar algorithm uses two sets to represent the nodes to be traversed and the nodes that have been traversed, which is usually called open set and close set.\\ \\
+To implement the algorithm, we supposed the board was fixed and could not rotate, so we only required the x-coordinate to correspond to the row of the board array and the y-coordinate to correspond to the column of the array. We then predefined a hard-coded 2D array of size (25x25) representing the game board filled with zeroes and ones: zero corresponding to a space on the board covered by an obstacle and one referring to an open space. \\ \\Particularly, the point of origin in the real game board is the center of geometry and a coordinate system is created based on this point (The right direction is the positive direction of the x-axis, and the inward direction is the positive direction of the y-axis). \\ \\We also wrote functions to convert local coordinates of the ball in the real game board to the index of the 2D array and vice versa. Moreover, when the user controls the ball on the board, the A* algorithm will be applied periodically to update optimal paths towards the goal due to dynamic changes in the position of the ball, so we designed functions to find the next optimal position based on the current one and allow the AI to create corresponding forces between them. \\ \\For example, if the ball is located at a certain point on the board, the current real position is firstly converted to the corresponding index of 2D array and is regarded as the start point and the next optimal position (the new index of the 2D array where the ball needs to move to according to the A* algorithm) can be obtained. Then, this new index of the 2D array will be converted back to the real position on the board. Then a new force will be created based on these two real points. \\ \\When the ball moves to the next position (whether it is optimal or not), this position is now regarded as the start point and the rest can be done in the same manner. The newly created force is utilised in different versions (mouse version and haptic version). If the user chooses the mouse version, the ball will automatically move to the goal through forces guided by AI even if the user does not click. If the user chooses the haptic version, corresponding forces created by AI will be added to the haptic devices directly. So, the user will feel a stronger force feedback if the ball is closer to the goal, compared to if it was farther away. In the meantime, the visualised road map will be displayed in the command line to instruct the user on how to reach the final goal.
+ \\ \\
+Although the A* search algorithm can obtain the optimal path with a bigger search space and in less time than other algorithms, there are some limitations to our implementation of the algorithm. Firstly, the index of the 2D array is discrete while the position of the ball is continuous. To illustrate, during conversion of coordinates, it is a many-to-one relationship which means several positions in the area correspond to one index of the 2D array. So if we intend to gain the real position of the ball in the game board only based on index of the 2D array, the gained real position is not very accurate and in this case, we just return the central point of the area that index of the 2D array corresponds to. Secondly, all created objects (like the ball and the obstacles) are three-dimensional, and the volume cannot be ignored but we have to use its centre of geometry to symbolise the whole object. Therefore, errors may be produced during navigation, leading to inaccurate directions of applied force. We have tried to minimise such errors in two ways. One is to divide the map more accurately, which means several zeroes in the 2D array represent one obstacle to decrease the influence of its volume. The other one is to utilise haptic devices to adjust parameters, such as original location of the ball, size of the ball, board or obstacles, the placement location of obstacles and so on, to increase the actual effects of the AI algorithm.
+
+\subsection{Potential Field}
+All forces in CHAI3D are represented as three-dimensional vectors (cVector3d class in CHAI3D library). The direction of the vector determines the direction of the force, while the length of the vector determines the magnitude of the force.
+
+In our project, potential fields are used as a basic building block for generating forces. To simplify the problem, a simple linear force model is applied to the potential fields. It acts as a linear spring in three-dimensional space, which obeys Hooke’s law (i.e., the force applied to the object is proportional to the distance between the object and the centre of the potential field):
+
+\begin{center}
+\begin{equation}
+F = -k (x - x')
+\end{equation}
+\end{center}
+
+\noindent Where: \\
+    $k$  - A constant value symbolising the stiffness of the spring\\
+    $x$  - The position of the object \\
+    $x'$ - The position of the centre of the potential field \\
+
+Multiple potential fields can coexist in the virtual environment, and the net force applied to the object is the vector addition of all forces on the object applied by different potential fields.
+
+\subsection{Mouse Controls}
+As for the mouse version of the game, the movement of the ball is mainly influenced by two potential fields: a mouse click potential field and astar potential field. The former is controlled by the user, which has the greater impact on the force applied to the ball. Whenever the user clicks the mouse button on the board, it will create a permanent potential field at the clicking position, attracting the ball to move in that direction. Since the mouse click potential field obeys Hooke’s Law, the further the distance between the ball and the centre of the potential field, the greater the force will be. The second one (astar potential field) is controlled by the AI agent without any human interference. The main purpose of the A* potential field is to guide the ball through the right path to the final destination. In our updateHaptics function, the A* algorithm is invoked periodically, calculating the shortest path from the current ball position to the destination point, and then creating a potential field dragging the ball to the next position of the optimal path. Both the mouse click potential field and A* potential field can be enabled and disabled manually by pressing certain keys on the keyboard for testing purposes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{mouse_img.png}
+    \caption{Free body diagram (Mouse Version)}
+    \label{fig:mouse_img}
+\end{figure}
+The most distinct advantage of this mouse version is that the ball can automatically reach the goal using AI collaboration. So even if the user clicks in the wrong direction to create force, the ball will also be controlled by the correct direction of force created by AI and be back to the right path. However, there is a limitation. There will be stuttering or lag when the ball moves because the A* algorithm needs more time to obtain the optimal path when the map becomes larger. This may have a bad effect on the user’s experience.
+
+\subsection{Haptic controls}
+As for the haptic version of the game, we decided to keep the haptic cursor as a moving potential field to affect the movement of the ball when rolling on the board, which is also the only outer force applied to the ball (except for preset environment forces such as gravity and friction). The haptic cursor (avatar) is represented as a black sphere in the virtual environment, whose position is directly controlled by the haptic device.
+
+Similar to the mouse version of the game, the A* algorithm is invoked periodically in the game loop to find the optimal path when the ball is moving on the board. However, the force generated by A* algorithm is not exerted on the ball this time, but on the haptic device such that the user can feel the force directly. By calculating the optimal path, the next point on the optimal path is obtained, and a force pointing to the next point is applied to the haptic device in order to guide the user in the right direction.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{haptic_img.png}
+    \caption{Free body diagram (Haptic Version)}
+    \label{fig:haptic_img}
+\end{figure}
+
+The most distinct advantage of this haptic version is that users can feel strong force feedback when the ball moves towards the goal. Also, when it impacts obstacles, users feel collision forces, simulating a real experience. However, there are some limitations to this also. Firstly, we currently utilise haptic devices to control the ball, but it would be better to control the board. However, it would involve conversion of three-dimensional coordinates considering angle of inclination of the board, allowing the obstacles and the plate to have the same rotation angle and so on, which, when we attempted it, caused too many bugs that would have taken too long to correct. Secondly, the haptic version is independent from the mouse version, which means the user can only select one version, and if they need to select the other, they need to re-compile the API. The ideal way is to choose versions in the interface of the start menu, and the user can make conversion at any time, which would be convenient. However, we were not able to accomplish this in the time we were given. 
+
+\subsection{Activity Diagram}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{activity_img1.png}
+    \caption{Pipeline of the game program}
+    \label{fig:activity_img1}
+\end{figure}
+\subsubsection{Explaining the Activity Diagram}
+When the program is launched, a start screen is displayed on the screen with a default background with an interface containing the “start” and “exit” buttons. If the user clicks the exit button, the program would terminate immediately. If the user clicks the start game button, the game would create a virtual environment (a cBulletWorld object) and all related game objects in the world. After the world is fully initialised, the program will execute the main game loop, waiting for user input. When the user clicks the mouse or moves the haptic device handle, the program will receive the input signal and create / modify the corresponding potential field in the world. The physics engine will sense the change of forces and move the object in the world, updating the ball position at the same time. At the end of the game loop, the program will check whether the ball has reached the goal. If the current ball position falls inside the preset destination range, the end game screen will be displayed and the user can click the exit button to terminate the program. If the winning condition is not met, the program will return back to the start of the game loop and wait for the user input repeatedly (see Figure \ref{fig:activity_img1}). 
+
+\subsection{Testing}
+Software testing plays a key role in validating whether the working software meets the requirements and works as expected. However, due to the attributes of our final project, we modified the testing plan that had been created before. Therefore, in this section, we discuss the details of our new testing plan. 
+\subsubsection{Unit Testing}
+In our project, we used automated testing tools to test applicable method via a C++ Testing Framework called Catch because it takes a different approach (to both NUnit and xUnit) that is a more natural fit for C++ and it can be perfectly integrated into IDEs (Visual Studio / CLion) and is easy to implement. We introduced two test cases of the AI algorithm with the macro. One is for the simple map and the other one is for the complex one. Then we wrote the individual test assertions using the REQUIRE macro to check whether each method is carried out logically, such as whether obstacles are set correctly, whether the size of map is correct, whether the path from source point and destination point is accessible and so on. In addition, we also took the coverage of testing inputs into account, and checked memory leaks using Valgrind.
+
+\subsubsection{Integration Testing}
+In the phase of integration testing, the interfaces between components is verified, and the integrity of a single class should be examined. This makes automated testing difficult to implement. Moreover, integration tests usually involve abundant codes, which has an impact on the ease of localising the fault when failures happen. Hence, to mitigate this issue, it is expected to divide the larger tests into smaller pieces, which means manually testing each single object created in the game world through haptic devices. For example, to test the nature or behavior of “Board”, we just see whether its nature behaves as expected in the GUI (like sizes, textures and colors) and utilise output parameters of haptic devices to check whether the return values correspond to outputs.
+
+\subsubsection{System Testing}
+The main job in the phase of system testing is to check whether the complete software configuration items can be correctly connected with the system, and find out the nonconformity or contradiction between the software and the requirement documents in the real system working environment. Particularly, manual testing is more practical in our project. We used the laboratory PC in the Cobot Maker Space with haptic devices to play the whole game. Meanwhile, we confirmed the maintainability and error recovery functions of the software.
+
+\vspace{5mm}
+\noindent However, there are some limitations to our testing. Firstly, we manually tested frequently, which takes a lot of time. Instead of manually testing, we could have used methods such as writing testing scripts to save time and to follow the guidelines of Test-Driven Development (TDD), all testing scripts should be done before the real implementation of methods. Secondly, we mainly do tests for the AI part, but only simple and tiny ones for game interface and objects. We should have done tests more in those aspects, like using automated/visualised GUI Testing Framework.
+
+\section{Management}
+\subsection{Our Initial Agile-Based Approach}
+Agile development takes an iterative, step-by-step approach to software development, with the evolution of the client’s needs at its core. In Agile development, a software project is initially built and divided into sub-projects, the results of which are tested, visualised, integrated and ready for use. In our project, we tried initially to pair scrum and paired programming with fortnightly sprints. Paired programming proved to be very effective both in terms of motivation to get through the workload, and pooling knowledge to come up with solutions more effectively to solve complex problems – a crucial aspect given the trouble we had learning the CHAI3D framework. 
+
+\subsection{Time Management}
+Initial progress with implementation was slow. We had never seen C++ used at this level before and we wanted to be sure that we learned how to use it properly before we began with implementation. This resulted in much wasted time where we tried to learn tools that were out of scope, such as OpenGL and the lower level structure of the CHAI3D framework and its modules, whereas instead we should have been learning how to use it to create our own code. Once this became apparent we shifted our focus to CHAI3D’s documentation and began learning how to create our own example programs. Regretfully, due to this poor time management, some of the smaller, less vital requirements gradually grew out of scope and we were no longer able to accomplish them. 
+
+\subsection{A Change in Methodology}
+Despite our successful plan to utilise paired programming, we did find that after we started coding, we had some problems following the methodology. Daily scrums as described did not work given the part-time nature of the project. We also found that some tasks we set were far more difficult than others and they ended up having to be delayed by multiple sprints. This sub-optimal approach continued until near the end of March, but eventually, we realised that because of our lack of experience programming with professional level C++, how we functioned as a group and the fact that it was part-time, we were unable to keep to scrum's key values. We discussed this problem in an emergency meeting and unanimously decided to change methodology in the hopes that we might be more productive for the rest of the project duration.
+\\ \\ 
+After that discussion, we found Kanban to be much more effective in terms of productivity. After the switch, our Trello boards that we had been neglecting before began to be used consistently and we made sure to be thorough in detailing all tasks and their paths through the boards. Once we had completed a Trello task, we would also leave a comment under it showing the commit we made on Git where said task was accomplished. Please follow our Trello board link to see how we utilised boards and tasks.
+
+\subsection{Our Meeting Format}
+Prior to the change, our meetings consisted of all of us deciding to meet up on a day and then all work together on the project at the same time. This was a seriously inefficient way to manage our time spent on the project and required immediate correction. Alongside our change in methodology, we also altered our meeting format.
+\\ \\
+Our new meeting structure was as such:
+\begin{itemize}
+    \item Start with a recap of the tasks we had assigned ourselves in the meeting before, how we got on with them and what trouble we had.
+    \item We then all collaborated to work on problems that were crucial to solve before we could continue. 
+    \item When the meetings ended we would organise a time to meet next and assign ourselves new or existing tasks either as individuals or in groups to complete before we met next. We would always arrange meeting times dynamically based on the difficulty of our new tasks.
+\end{itemize}
+
+We would hold these meetings frequently at an average of two to three times per week to stay on top of progress and workload separation. Our team had near-perfect attendance at these meetings. Except for a low number of outliers, all team members were always present at every meeting we held. They would always be held in person whenever possible and those who were not able to attend in person would be highly encouraged to participate through Microsoft Teams. This facilitated a high level of participation and communication between team members. For more informal conversation, a popular live group chatting service was used to encourage frequent further discussion. 
+
+As a result of changing methodology and our meeting format, our work output drastically increased. This is evident by the density of our commits on our repository page (see Figure \ref{fig:commit_img}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{commit_img.png}
+    \caption{A graph of our commits to Git throughout the project}
+    \label{fig:commit_img}
+\end{figure}
+
+\subsection{Git usage}
+We found Git to be a vital part of the organisation of our project. Keeping a master branch where a stable version of the project was crucial to our success. We would rarely commit code changes directly to this branch, and instead create branches with a logical and consistent naming scheme, corresponding to the user’s university name and the purpose of the branch: 
+\\ \\
+\textit{psyabc/branch} 
+\\ \\
+We would create a branch from main, implement our additions or changes to the codebase, make sure that the changes would compile correctly, utilise user testing and our testing framework to ensure that our changes did not cause any instability in the running program, and then request a merge from the Git Master back into the master branch. Git also allowed us to keep our codebase and progress with documentation in the same place, accessible by every member. 
+After switching from Scrum to Kanban, we found ourselves using Git issues, milestones and labels less and eventually phased them out completely. We felt that the job meant for management tools on the repository page was eclipsed by Trello cards and the only major milestone we had left was the project deadline. In many projects all of these tools can be very useful for organisation, but given that we were a small team on a relatively small project, we made a conscious choice to keep it simple and use only Trello.
+
+%% To do
+\section{Successes and Achievements}
+
+Overall, despite certain struggles we faced throughout the project timeline, the process in its entirety has been very successful in teaching us the procedures and level of organisation required to complete such a project. Although at times we struggled with time management and task organisation, it was a good learning experience for us to gain perspective on how most software engineering projects will look post-graduation. Our organisation skills have improved as we are now more accustomed to long-term time-planning and task delegation.  We now feel much more comfortable coding in a group environment and using resources such as GitLab and Trello to keep our work organised. Having to work in a group with other peers we were not familiar with was also very effective in preparing us for future projects in the real-world, where we won't necessarily always get a choice on who we work with.
+\\ \\
+In terms of the end product, although there were certain brief requirements we were not able to successfully implement, the final deliverable is complete and very similar to the product we initially envisioned. All of the high priority requirements we set out to finish were successfully included into the game. The final game architecture has full functionality, including a number of interfaces for users to interact with. We were also able to incorporate the Haption Virtuose Device into our product and program it to provide the users with force feedback to assist them in reaching the goal. The AI algorithm is also effective in correctly identifying the optimal path to the game goal and correctly modifies this path depending on the location of the ball on the board.
+
+\section{Summary}
+This project was a great hands-on experience with coding in a team environment and we found out that we were still making many mistakes throughout semester two. We had understood first-hand that communication skills are very important within a team environment and it is important to encourage everyone to speak up and discuss opinions to make better decisions as a team. We also learnt that implementing code in a team environment is very different from writing code individually and tools such as Git help with keeping our code in order. Having more developers does not necessarily mean the project will get completed sooner, instead, code quality will be higher due to the use of paired programming and work morale will be improved over programming individually. 
+
+\section{Future Roadmap}
+If we were able to further develop this product, there are certain improvements that could be made for better haptic implementation as well as overall game functionality. 
+
+In terms of the haptic feedback, our game could be better developed by fine tuning the role exchange mechanism. Although our current AI interaction is designed to allow for force feedback to guide users to the goal if they slow down movement, it could be improved by allowing for more smooth role exchange so as to not obstruct user experience.
+
+In terms of game functionality, one aspect that could be refined is our AI algorithm. Currently, the astar algorithm we implemented has been hard coded to recognise the different obstacles on the map. So given more time, we would also improve upon this to allow for the algorithm to independently recognise the obstacles on the board and adjust itself to find the fastest path to the end. The current game GUI could also be further developed as right now it is quite simple in its design. It could be made to look more aesthetically pleasing and detailed. A database to show previous completion times would also be effective in making the game more suitable for research. Currently, our example game only has one playable level, so another improvement would be to create more levels, ranging in difficulty, to make the game more challenging and competitive between users.
+
+\newpage
+%%
+
+\begin{thebibliography}{99}
+\bibitem{ref1}Utilisateur, S., 2022. Virtuose™ 6D - HAPTION SA. [online] Haption.com. Available at: \url{https://www.haption.com/en/products-en/virtuose-6d-en.html} [Accessed 1 May 2022].
+\bibitem{ref2}GregorDS, 2015. Six degrees of freedom. [image] Available at: \url{https://en.wikipedia.org/wiki/Six degrees of freedom#/media/File:6DOF.svg} [Accessed 1 May 2022]. 
+\bibitem{ref3}Ayse Kucukyilmaz, Tevfik Metin Sezgin, and Cagatay Basdogan. “Intention recognition for
+dynamic role exchange in haptic collaboration”. In: IEEE transactions on haptics 6.1 (2012),
+pp. 58–68.
+\bibitem{ref4}Chai3d.org. 2022. CHAI3D - Home. [online] Available at: \url{https://www.chai3d.org/} [Accessed 1 May 2022].
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,5 @@
+	
+What to accomplish in sprint 7:
+	Add obstacles to board and a goal
+	Begin implementation of AI
+	Split the rest of the file into classes

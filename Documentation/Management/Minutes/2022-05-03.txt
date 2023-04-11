@@ -1,0 +1,22 @@
+Submitted Abstract, Report, Video
+
+
+Remaining tasks:
+	code:					
+		discuss whether a smaller device may work to demo before deadline
+		
+		change setUpWindow() to void return 
+		Rotate camera 90 degrees clockwise to place goal top left and align board with astar array
+
+			
+Assigned tasks:
+	Ibrahim: 	
+	Tianfeng: 	
+	Daniel: 	
+	Jiahao: 	
+	Salaar: 	
+	lok: 		
+
+
+Meeting length: 275 mins
+Next meeting: 

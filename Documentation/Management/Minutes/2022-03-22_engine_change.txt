@@ -1,0 +1,9 @@
+Progress has been made with linking an object with physical properties to the board
+unfortunately the absense of an addChild function for ODE makes it difficult to construct a board in the way we want it
+
+After investigation we found out that the BULLET physics engine provides an addChild function that looks like it would
+behave in the way we want it to. 
+
+We may have to take everything we constructed with ODE and convert it to BULLET.
+
+Work continues on the A* algorithm and splitting up classes.

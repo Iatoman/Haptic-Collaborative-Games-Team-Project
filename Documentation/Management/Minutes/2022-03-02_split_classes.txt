@@ -1,0 +1,3 @@
+began splitting up the main file into classes, each with their own header file
+Might be a challenge integrating it with the framework
+

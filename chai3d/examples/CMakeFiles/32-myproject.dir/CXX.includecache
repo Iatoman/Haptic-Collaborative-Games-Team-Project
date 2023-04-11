@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cs_group_2021_21/Desktop/chai3d/examples/GLFW/32-myproject/11-effects.cpp
+chai3d.h
+/home/cs_group_2021_21/Desktop/chai3d/examples/GLFW/32-myproject/chai3d.h
+GLFW/glfw3.h
+-
+

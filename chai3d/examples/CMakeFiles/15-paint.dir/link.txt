@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/15-paint.dir/15-paint/15-paint.o  -o 15-paint 

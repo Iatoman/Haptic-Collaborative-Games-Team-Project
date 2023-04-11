@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/25-sounds.dir/25-sounds/25-sounds.o  -o 25-sounds 

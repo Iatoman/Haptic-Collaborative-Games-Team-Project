@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/16-friction.dir/16-friction/16-friction.o  -o 16-friction 
